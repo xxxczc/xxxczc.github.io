@@ -5,19 +5,19 @@
   
   <title>Android笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="WebView的cookie机制,轻松搞定WebView cookie同步问题##Q:
-在进行APP+H5混合开发的时候，一些功能是用原生页面实现的,如登陆，一些功能是用H5实现的。所以往往需要将在native方法登陆的状态同步到H5中避免再次登陆。这种情况在Android开发中比较常见，因为Android不会自动同步cookie到WebView。做iOS开发则不用担心这个问题，因为iOS内部已经">
+  <meta name="description" content="WebView的cookie机制,轻松搞定WebView cookie同步问题##
+在进行APP+H5混合开发的时候，一些功能是用原生页面实现的,如登陆，一些功能是用H5实现的。所以往往需要将在native方法登陆的状态同步到H5中避免再次登陆。这种情况在Android开发中比较常见，因为Android不会自动同步cookie到WebView。做iOS开发则不用担心这个问题，因为iOS内部已经实现">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android笔记">
 <meta property="og:url" content="http://yoursite.com/2017/03/02/Android笔记/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="WebView的cookie机制,轻松搞定WebView cookie同步问题##Q:
-在进行APP+H5混合开发的时候，一些功能是用原生页面实现的,如登陆，一些功能是用H5实现的。所以往往需要将在native方法登陆的状态同步到H5中避免再次登陆。这种情况在Android开发中比较常见，因为Android不会自动同步cookie到WebView。做iOS开发则不用担心这个问题，因为iOS内部已经">
-<meta property="og:updated_time" content="2017-03-02T06:54:31.266Z">
+<meta property="og:description" content="WebView的cookie机制,轻松搞定WebView cookie同步问题##
+在进行APP+H5混合开发的时候，一些功能是用原生页面实现的,如登陆，一些功能是用H5实现的。所以往往需要将在native方法登陆的状态同步到H5中避免再次登陆。这种情况在Android开发中比较常见，因为Android不会自动同步cookie到WebView。做iOS开发则不用担心这个问题，因为iOS内部已经实现">
+<meta property="og:updated_time" content="2017-03-02T06:59:19.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android笔记">
-<meta name="twitter:description" content="WebView的cookie机制,轻松搞定WebView cookie同步问题##Q:
-在进行APP+H5混合开发的时候，一些功能是用原生页面实现的,如登陆，一些功能是用H5实现的。所以往往需要将在native方法登陆的状态同步到H5中避免再次登陆。这种情况在Android开发中比较常见，因为Android不会自动同步cookie到WebView。做iOS开发则不用担心这个问题，因为iOS内部已经">
+<meta name="twitter:description" content="WebView的cookie机制,轻松搞定WebView cookie同步问题##
+在进行APP+H5混合开发的时候，一些功能是用原生页面实现的,如登陆，一些功能是用H5实现的。所以往往需要将在native方法登陆的状态同步到H5中避免再次登陆。这种情况在Android开发中比较常见，因为Android不会自动同步cookie到WebView。做iOS开发则不用担心这个问题，因为iOS内部已经实现">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -88,7 +88,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="WebView的cookie机制-轻松搞定WebView-cookie同步问题"><a href="#WebView的cookie机制-轻松搞定WebView-cookie同步问题" class="headerlink" title="WebView的cookie机制,轻松搞定WebView cookie同步问题"></a>WebView的cookie机制,轻松搞定WebView cookie同步问题</h1><p>##Q:</p>
+        <h1 id="WebView的cookie机制-轻松搞定WebView-cookie同步问题"><a href="#WebView的cookie机制-轻松搞定WebView-cookie同步问题" class="headerlink" title="WebView的cookie机制,轻松搞定WebView cookie同步问题"></a>WebView的cookie机制,轻松搞定WebView cookie同步问题</h1><p>##</p>
 <h2 id="在进行APP-H5混合开发的时候，一些功能是用原生页面实现的-如登陆，一些功能是用H5实现的。所以往往需要将在native方法登陆的状态同步到H5中避免再次登陆。这种情况在Android开发中比较常见，因为Android不会自动同步cookie到WebView。做iOS开发则不用担心这个问题，因为iOS内部已经实现了cookie同步。本文将会介绍两种cookie同步的方式，并重点分析WebView的cookie机制。在开始之前先讲一下基于session的登录验证。"><a href="#在进行APP-H5混合开发的时候，一些功能是用原生页面实现的-如登陆，一些功能是用H5实现的。所以往往需要将在native方法登陆的状态同步到H5中避免再次登陆。这种情况在Android开发中比较常见，因为Android不会自动同步cookie到WebView。做iOS开发则不用担心这个问题，因为iOS内部已经实现了cookie同步。本文将会介绍两种cookie同步的方式，并重点分析WebView的cookie机制。在开始之前先讲一下基于session的登录验证。" class="headerlink" title="在进行APP+H5混合开发的时候，一些功能是用原生页面实现的,如登陆，一些功能是用H5实现的。所以往往需要将在native方法登陆的状态同步到H5中避免再次登陆。这种情况在Android开发中比较常见，因为Android不会自动同步cookie到WebView。做iOS开发则不用担心这个问题，因为iOS内部已经实现了cookie同步。本文将会介绍两种cookie同步的方式，并重点分析WebView的cookie机制。在开始之前先讲一下基于session的登录验证。"></a>在进行APP+H5混合开发的时候，一些功能是用原生页面实现的,如登陆，一些功能是用H5实现的。所以往往需要将在native方法登陆的状态同步到H5中避免再次登陆。这种情况在Android开发中比较常见，因为Android不会自动同步cookie到WebView。做iOS开发则不用担心这个问题，因为iOS内部已经实现了cookie同步。本文将会介绍两种cookie同步的方式，并重点分析WebView的cookie机制。在开始之前先讲一下基于session的登录验证。</h2><ul>
 <li><p>基于session的登录验证：<br>基于session的登录验证，会在程序请求接口的时候判断服务器端是否有当前会话的session，如果没有则被认为没有登录。客户端没有session这一概念，但有cookie与其对应。每一个session都有一个session id作为唯一标识。在登录成功后服务器会在请求头中返回cookie，cookie包含着这次登录会话的session id，在接下来的请求中只需要将登陆返回的cookie设置到请求头中便可以通过验证。</p>
 <ol>
@@ -107,15 +107,9 @@
 <p> 如何做：下面我们就通过CookieManager将cookie同步到WebView中。之前同步cookie需要用到CookieSyncManager类，现在这个类已经被deprecated。如今WebView已经可以在需要的时候自动同步cookie了，所以不再需要创建CookieSyncManager类的对象来进行强制性的同步cookie了。现在只需要获得 CookieManager的对象将cookie设置进去就可以了。</p>
 <p> 第一步：登录时从服务器的返回头中取出cookie<br> <code>String cookieStr = conn.getHeaderField(&quot;Set-Cookie&quot;);</code></p>
 <p> 第二步：将cookie同步到WebView中</p>
-<p> <code>public static boolean syncCookie(String url,String cookie) {
-if (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.LOLLIPOP) {
- CookieSyncManager.createInstance(context);
-}
-CookieManager cookieManager = CookieManager.getInstance();
-cookieManager.setCookie(url, cookie);//如果没有特殊需求，这里只需要将session id以&quot;key=value&quot;形式作为cookie即可
-String newCookie = cookieManager.getCookie(url);
-return TextUtils.isEmpty(newCookie)?false:true;
-}</code></p>
+<p> `<br> public static boolean syncCookie(String url,String cookie) {<br> if (Build.VERSION.SDK_INT &lt; Build.VERSION_CODES.LOLLIPOP) {</p>
+<pre><code>CookieSyncManager.createInstance(context);
+</code></pre><p> }<br> CookieManager cookieManager = CookieManager.getInstance();<br> cookieManager.setCookie(url, cookie);<br> String newCookie = cookieManager.getCookie(url);<br> return TextUtils.isEmpty(newCookie)?false:true;}`</p>
 </li>
 </ol>
 </li>
@@ -124,17 +118,20 @@ return TextUtils.isEmpty(newCookie)?false:true;
 下面我们查看一下Cookie数据库中发生的变化。 
 如图： 
 
-提示： 
+提示：
 1. 同步cookie要在WebView加载url之前，否则WebView无法获得相应的cookie，也就无法通过验证。 
 2. 每次登录成功后都需要调用”syncCookie”方法将cookie同步到WebView中，同时也达到了更新WebView的cookie。如果登录后没有及时将cookie同步到WebView可能导致WebView拿的是旧的session id和服务器进行通信。
+
 优点：
+
+
 方便，只需要在登陆后将cookie同步到WebView即可，省去了每次请求都需要设置一次的繁琐。
 兼容性好，因为是系统原生支持的，所以兼容性自然比方式一要好，不存在cookie被拦截的问题。
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/02/Android笔记/" data-id="cizs1dowz0000k89z87wzaskv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/02/Android笔记/" data-id="cizs1k4ml0000tk9zlf7ur3in" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
